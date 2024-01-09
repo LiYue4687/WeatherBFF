@@ -42,5 +42,11 @@ func GetWeather24hour(r *gin.Engine) {
 			c.JSON(500, gin.H{"error": "unexpected error"})
 			return
 		}
+		switch result.Status {
+		case "1":
+			c.JSON(200, result)
+		case "0":
+			c.JSON(404, gin.H{"error": "weather data not found"})
+		}
 	})
 }

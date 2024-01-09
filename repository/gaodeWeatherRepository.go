@@ -43,7 +43,7 @@ func GetWeatherForecast(city, extensions string) *entity.WeatherForecastResponse
 func GetWeather24hour(city, extensions string) *entity.Weather24hourResponse {
 	res := GetWeatherForecast(city, extensions)
 	var realRes entity.Weather24hourResponse
-	realRes.Status = "1"
+	realRes.Status = res.Status
 	realRes.CityInfo.City = res.Forecasts[0].City
 	realRes.CityInfo.Province = res.Forecasts[0].Province
 	realRes.CityInfo.AdCode = res.Forecasts[0].AdCode

@@ -37,10 +37,12 @@ func TestGetWeather24hour(t *testing.T) {
 
 }
 
-// 基线测试，测试运行效率
+// 基准测试，测试运行效率
 func BenchmarkWeather(b *testing.B) {
-	testRes1 := repository.GetWeatherForecast("110101", "all")
-	fmt.Println(testRes1)
-	testRes2 := repository.GetWeather24hour("110101", "all")
-	fmt.Println(testRes2)
+	for i := 0; i < b.N; i++ {
+		testRes1 := repository.GetWeatherForecast("110101", "all")
+		fmt.Println(testRes1)
+		testRes2 := repository.GetWeather24hour("110101", "all")
+		fmt.Println(testRes2)
+	}
 }

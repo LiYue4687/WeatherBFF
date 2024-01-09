@@ -8,21 +8,21 @@ type WeatherForecastResponse struct {
 
 type Forecast struct {
 	City       string         `json:"city"`
-	AdCode     string         `json:"adCode"`
+	AdCode     string         `json:"adcode"`
 	Province   string         `json:"province"`
-	ReportTime string         `json:"reportTime"`
+	ReportTime string         `json:"reporttime"`
 	Casts      []ForecastItem `json:"casts"`
 }
 
 type ForecastItem struct {
 	Date         string `json:"date"`
 	Week         string `json:"week"`
-	DayWeather   string `json:"dayWeather"`
-	NightWeather string `json:"nightWeather"`
-	DayTemp      string `json:"dayTemp"`
-	NightTemp    string `json:"nightTemp"`
-	DayWind      string `json:"dayWind"`
-	NightWind    string `json:"nightWind"`
-	DayPower     string `json:"dayPower"`
-	NightPower   string `json:"nightPower"`
+	DayWeather   string `json:"dayweather"`
+	NightWeather string `json:"nightweather"`
+	DayTemp      string `json:"daytemp"`
+	NightTemp    string `json:"nighttemp"`
+	DayWind      string `json:"daywind"`
+	NightWind    string `json:"nightwind"`
+	DayPower     string `json:"daypower"`
+	NightPower   string `json:"nightpower"`
 }
