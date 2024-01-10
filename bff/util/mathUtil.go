@@ -3,7 +3,7 @@ package util
 import (
 	"math/rand"
 	"strconv"
-	"weatherBFF/entity"
+	"weatherBFF/bff/entity"
 )
 
 func SimulateWeather(reportTime, dayTemp, nightTemp int) []entity.Forecast24hourItem {

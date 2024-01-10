@@ -8,12 +8,12 @@ import (
 	"net/url"
 	"strconv"
 	"time"
-	"weatherBFF/config"
-	"weatherBFF/entity"
-	"weatherBFF/util"
+	"weatherBFF/bff/config"
+	entity2 "weatherBFF/bff/entity"
+	"weatherBFF/bff/util"
 )
 
-func GetWeatherForecast(city, extensions string) *entity.WeatherForecastResponse {
+func GetWeatherForecast(city, extensions string) *entity2.WeatherForecastResponse {
 	params := url.Values{}
 	Url, err := url.Parse(config.BaseUrl + "weatherInfo")
 	if err != nil {
@@ -35,14 +35,14 @@ func GetWeatherForecast(city, extensions string) *entity.WeatherForecastResponse
 	}(resp.Body)
 
 	body, _ := io.ReadAll(resp.Body)
-	var res entity.WeatherForecastResponse
+	var res entity2.WeatherForecastResponse
 	_ = json.Unmarshal(body, &res)
 	return &res
 }
 
-func GetWeather24hour(city, extensions string) *entity.Weather24hourResponse {
+func GetWeather24hour(city, extensions string) *entity2.Weather24hourResponse {
 	res := GetWeatherForecast(city, extensions)
-	var realRes entity.Weather24hourResponse
+	var realRes entity2.Weather24hourResponse
 	realRes.Status = res.Status
 	realRes.CityInfo.City = res.Forecasts[0].City
 	realRes.CityInfo.Province = res.Forecasts[0].Province

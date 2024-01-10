@@ -3,7 +3,7 @@ package repository_test
 import (
 	"fmt"
 	"testing"
-	"weatherBFF/repository"
+	"weatherBFF/bff/repository"
 )
 
 // 黑盒测试
@@ -21,7 +21,6 @@ func TestGetWeatherForecast(t *testing.T) {
 	}
 }
 
-// 白盒测试
 func TestGetWeather24hour(t *testing.T) {
 	testRes := repository.GetWeather24hour("110101", "all")
 	fmt.Println(testRes)

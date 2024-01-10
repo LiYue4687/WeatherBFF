@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package="grpcServer/service;proto";
+
+service CitySearchService {
+  rpc Search(CitySearchRequest) returns (CitySearchResponse) {}
+}
+
+message CitySearchRequest {
+  string searchValue = 1;
+}
+
+message CitySearchResponse {
+  repeated CityItem items= 1;
+}
+
+message CityItem {
+  string provinceName = 1;
+  string cityName = 2;
+  string countyName = 3;
+  string cityCode = 4;
+  string adCode = 5;
+}

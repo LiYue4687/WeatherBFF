@@ -3,7 +3,7 @@ package routes
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"weatherBFF/service"
+	"weatherBFF/bff/service"
 )
 
 func GetWeatherForecast(r *gin.Engine) {
