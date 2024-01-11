@@ -1,9 +1,9 @@
 package util
 
 import (
+	"github.com/LiYue4687/WeatherBFF/bff/entity"
 	"math/rand"
 	"strconv"
-	"weatherBFF/bff/entity"
 )
 
 func SimulateWeather(reportTime, dayTemp, nightTemp int) []entity.Forecast24hourItem {

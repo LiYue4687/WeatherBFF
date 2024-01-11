@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/LiYue4687/WeatherBFF/bff/routes"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"weatherBFF/bff/routes"
 )
 
 func main() {

@@ -2,8 +2,8 @@ package routes
 
 import (
 	"fmt"
+	"github.com/LiYue4687/WeatherBFF/bff/service"
 	"github.com/gin-gonic/gin"
-	"weatherBFF/bff/service"
 )
 
 func GetWeatherForecast(r *gin.Engine) {

@@ -2,8 +2,8 @@ package repository_test
 
 import (
 	"fmt"
+	"github.com/LiYue4687/WeatherBFF/bff/repository"
 	"testing"
-	"weatherBFF/bff/repository"
 )
 
 // 黑盒测试

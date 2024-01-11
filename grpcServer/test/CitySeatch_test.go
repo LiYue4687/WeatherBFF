@@ -2,9 +2,9 @@ package test
 
 import (
 	"fmt"
+	"github.com/LiYue4687/WeatherBFF/grpcServer/repository"
+	"github.com/LiYue4687/WeatherBFF/proto"
 	"testing"
-	"weatherBFF/grpcServer/repository"
-	"weatherBFF/proto"
 )
 
 func TestSearchCity(t *testing.T) {

@@ -1,14 +1,14 @@
 package service
 
 import (
-	entity2 "weatherBFF/bff/entity"
-	"weatherBFF/bff/repository"
+	"github.com/LiYue4687/WeatherBFF/bff/entity"
+	"github.com/LiYue4687/WeatherBFF/bff/repository"
 )
 
-func GetWeatherForecast(city, extensions string) *entity2.WeatherForecastResponse {
+func GetWeatherForecast(city, extensions string) *entity.WeatherForecastResponse {
 	return repository.GetWeatherForecast(city, extensions)
 }
 
-func GetWeather24hour(city, extensions string) *entity2.Weather24hourResponse {
+func GetWeather24hour(city, extensions string) *entity.Weather24hourResponse {
 	return repository.GetWeather24hour(city, extensions)
 }

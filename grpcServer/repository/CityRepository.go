@@ -2,9 +2,9 @@ package repository
 
 import (
 	"database/sql"
+	"github.com/LiYue4687/WeatherBFF/proto"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
-	"weatherBFF/proto"
 )
 
 func SearchCity(request *proto.CitySearchRequest) ([]*proto.CityItem, error) {

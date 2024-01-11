@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/LiYue4687/WeatherBFF/proto"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"time"
-	"weatherBFF/proto"
 
 	"golang.org/x/net/context"
 	// 导入grpc包
