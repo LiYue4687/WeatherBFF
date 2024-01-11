@@ -4,12 +4,11 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"time"
+	"weatherBFF/proto"
 
 	"golang.org/x/net/context"
 	// 导入grpc包
 	"google.golang.org/grpc"
-	// 导入刚才我们生成的代码所在的proto包。
-	proto "weatherBFF/grpcServer/service"
 )
 
 const (

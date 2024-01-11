@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 	"weatherBFF/grpcServer/repository"
-	proto "weatherBFF/grpcServer/service"
+	"weatherBFF/proto"
 )
 
 func TestSearchCity(t *testing.T) {

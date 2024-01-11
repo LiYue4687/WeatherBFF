@@ -2,13 +2,12 @@ package main
 
 import (
 	"context"
+	_ "github.com/mattn/go-sqlite3"
 	"google.golang.org/grpc"
 	"log"
 	"net"
 	"weatherBFF/grpcServer/repository"
-	proto "weatherBFF/grpcServer/service"
-
-	_ "github.com/mattn/go-sqlite3"
+	"weatherBFF/proto"
 )
 
 type SearchService struct {
