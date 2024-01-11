@@ -53,7 +53,7 @@ func GetWeather24hour(city, extensions string) *entity.Weather24hourResponse {
 	fmt.Println(parsedTime, parsedTime.Hour())
 	dayTemp, _ := strconv.Atoi(res.Forecasts[0].Casts[0].DayTemp)
 	nightTemp, _ := strconv.Atoi(res.Forecasts[0].Casts[0].NightTemp)
-	realRes.Forecast24hour = util.SimulateWeather(parsedTime.Hour(), dayTemp, nightTemp)
+	realRes.Forecast24hour = util.SimulateWeather(parsedTime.Hour(), dayTemp, nightTemp, res.Forecasts[0].Casts[0].DayWeather)
 
 	return &realRes
 }

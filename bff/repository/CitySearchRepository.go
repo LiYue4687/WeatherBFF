@@ -1,21 +1,16 @@
-package main
+package repository
 
 import (
+	"context"
+	"github.com/LiYue4687/WeatherBFF/bff/entity"
 	"github.com/LiYue4687/WeatherBFF/proto"
+	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"time"
-
-	"golang.org/x/net/context"
-	// 导入grpc包
-	"google.golang.org/grpc"
 )
 
-const (
-	defaultName = "world"
-)
-
-func main() {
+func SearchCity(searchValue string) []*entity.CityItem {
 	// 连接grpc服务器
 	conn, err := grpc.Dial("localhost:9001", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
@@ -25,7 +20,7 @@ func main() {
 	defer func(conn *grpc.ClientConn) {
 		err := conn.Close()
 		if err != nil {
-
+			log.Fatalf("error happpened while closing connection: %v", err)
 		}
 	}(conn)
 
@@ -38,11 +33,21 @@ func main() {
 	defer cancel()
 
 	// 调用SayHello接口，发送一条消息
-	r, err := c.Search(ctx, &proto.CitySearchRequest{SearchValue: "大连"})
+	r, err := c.Search(ctx, &proto.CitySearchRequest{SearchValue: searchValue})
 	if err != nil {
-		log.Fatalf("could not greet: %v", err)
+		log.Fatalf("search fail: %v", err)
 	}
 
-	// 打印服务的返回的消息
-	log.Printf("Greeting: %s", r.Items)
+	Cities := make([]*entity.CityItem, len(r.Items))
+	for i, cityItem := range r.Items {
+		Cities[i] = &entity.CityItem{
+			ProvinceName: cityItem.ProvinceName,
+			CityName:     cityItem.CityName,
+			CountyName:   cityItem.CountyName,
+			CityCode:     cityItem.CityCode,
+			AdCode:       cityItem.AdCode,
+		}
+	}
+
+	return Cities
 }

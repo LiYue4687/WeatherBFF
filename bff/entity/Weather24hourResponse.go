@@ -15,6 +15,7 @@ type CityInfo struct {
 }
 
 type Forecast24hourItem struct {
-	Time string `json:"time"`
-	Temp string `json:"temp"`
+	Time    string `json:"time"`
+	Temp    string `json:"temp"`
+	Weather string `json:"weather"`
 }

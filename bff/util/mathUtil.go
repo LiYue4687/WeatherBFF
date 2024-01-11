@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func SimulateWeather(reportTime, dayTemp, nightTemp int) []entity.Forecast24hourItem {
+func SimulateWeather(reportTime, dayTemp, nightTemp int, weather string) []entity.Forecast24hourItem {
 	hoursInDay := 24
 	weatherData := make([]entity.Forecast24hourItem, hoursInDay)
 
@@ -15,8 +15,9 @@ func SimulateWeather(reportTime, dayTemp, nightTemp int) []entity.Forecast24hour
 		temperature := rand.Intn(dayTemp-nightTemp+1) + nightTemp
 		weatherData[hour] =
 			entity.Forecast24hourItem{
-				Time: strconv.Itoa((reportTime+hour)%24) + ":00",
-				Temp: strconv.Itoa(temperature),
+				Time:    strconv.Itoa((reportTime+hour)%24) + ":00",
+				Temp:    strconv.Itoa(temperature),
+				Weather: weather,
 			}
 	}
 
