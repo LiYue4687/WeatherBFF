@@ -1,4 +1,4 @@
-module weatherBFF
+module github.com/LiYue4687/WeatherBFF
 
 go 1.21
 
